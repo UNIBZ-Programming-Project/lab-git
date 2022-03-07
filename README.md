@@ -1,6 +1,6 @@
 # Regular Expressions
 
-These **ungraded** exercises were designed for you to practice working with Git and Github.
+These exercises were designed for you to practice working with Git and Github.
 
 Please read the instructions for each exercise carefully.
 
