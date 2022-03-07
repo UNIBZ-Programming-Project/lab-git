@@ -9,7 +9,7 @@ Please read the instructions for each exercise carefully.
 ## Exercise 1
 
 1. Clone this repository into your computer.
-    * Hint: Look into the `git clone` command
+    * Hint: Use the `git clone` command
 1. Open your IDE of choice and add a Java project to this repository as shown below:
     ```
     ├── src
@@ -51,28 +51,29 @@ Please read the instructions for each exercise carefully.
     ```
 1. Using your IDE, compile and run this code.
 1. Commit these new files into your local git repository. Do not commit any compiled classes and IDE files!
-    - Hint 1: Look into the `git add` and `git commit` commands.
+    - Hint 1: Use the `git add` and `git commit` commands.
     - Hint 2: If you stage files by mistake, use `git reset` to unstage them.
 1. Push your changes into your remote git repository. 
-    - Hint: Look into the `git push` command.
+    - Hint: Use the `git push` command.
  
 ## Exercise 3
 
 1. Checkout the `main` branch.
 1. Create a branch named `new-dogs` from `main` in your local git repository.
-    - Hint: Look into the `git branch` command.
+    - Hint: Use the `git branch` command.
 1. Checkout the `new-dogs` branch.
+    - Hint: Use the `git checkout` command.
 1. Edit `Main.java` and make it print 3 new dogs.
 1. Commit those changes into your local git.
 1. Publish the `new-dogs` branch on your remote git repository.
-    - Hint: Look into the `--set-upstream` option of the `git push` command.
+    - Hint: Use the `--set-upstream` option of the `git push` command.
 1. Open your https://github.com and verify that your branch has been published there.
 1. Merge `new-dogs` into `main`.
-    - Hint: Look into the `git merge` command.
+    - Hint: Use the `git merge` command.
 1. Delete `new-dogs` on your local repository.
-    - Hint: Look into the `--delete` option of the `git branch` command.
+    - Hint: Use the `--delete` option of the `git branch` command.
 1. Delete `new-dogs` on your remote repository.
-    - Hint: Look into the `--delete` option of the `git push` command.
+    - Hint: Use the `--delete` option of the `git push` command.
 
 ## Exercise 4
 
@@ -192,11 +193,11 @@ Please read the instructions for each exercise carefully.
     ```
 1. Add and commit this change to your local repository.
 1. Reverse this last commit in a way that it is removed from your repository's history
-    - Hint 1: Look into the `git reset` command.
+    - Hint 1: Use the `git reset` command.
     - Hint 2: To see your repository's history, use the `git log` command.
 1. Commit `Cat.java` again.
 1. Reverse this last commit in a way that it remains in from your repository's history
-    - Hint: Look into the `git reverse` command.
+    - Hint: Use the `git reverse` command.
 
 ## Exercise 7
 
