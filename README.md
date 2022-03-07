@@ -53,13 +53,13 @@ Please read the instructions for each exercise carefully.
 1. Commit these new files into your local git repository. Do not commit any compiled classes and IDE files!
     - Hint 1: Use the `git add` and `git commit` commands.
     - Hint 2: If you stage files by mistake, use `git reset` to unstage them.
+    - Hint 3: Follow the guidelines described [here](https://cbea.ms/git-commit/) when writing your commit messages.
 1. Push your changes into your remote git repository. 
     - Hint: Use the `git push` command.
  
 ## Exercise 3
 
-1. Checkout the `main` branch.
-1. Create a branch named `new-dogs` from `main` in your local git repository.
+1. On the `main` branch, create a branch named `new-dogs` from `main` in your local git repository.
     - Hint: Use the `git branch` command.
 1. Checkout the `new-dogs` branch.
     - Hint: Use the `git checkout` command.
@@ -71,14 +71,16 @@ Please read the instructions for each exercise carefully.
 1. Merge `new-dogs` into `main`.
     - Hint: Use the `git merge` command.
 1. Delete `new-dogs` on your local repository.
-    - Hint: Use the `--delete` option of the `git branch` command.
+    - Hint 1: Use the `--delete` option of the `git branch` command.
+    - Hint 2: Use `git branch` to list your local branches.
 1. Delete `new-dogs` on your remote repository.
-    - Hint: Use the `--delete` option of the `git push` command.
+    - Hint 1: Use the `--delete` option of the `git push` command.
+    - Hint 2: Use `git branch --all` to list your branches on both your local and your remote repository.
+1. Open https://github.com again and verify that your branch was deleted there.
 
 ## Exercise 4
 
-1. Checkout the `main` branch.
-1. Create a `.gitignore` file that ignores:
+1. On the `main` branch, create a `.gitignore` file that ignores:
     * any `.class` file (e.g. `Dog.class`, `Main.class`)
     * any file or directory your IDE may have created
     * any OS-specific file (e.g. `.DS_Store` on macOS)
@@ -87,8 +89,7 @@ Please read the instructions for each exercise carefully.
 
 ## Exercise 5
 
-1. Checkout the `main` branch.
-1. Create a branch named `owners`.
+1. From the `main` branch, create a branch named `owners`.
 1. Checkout the `owners` branch.
 1. Add `Owner.java` to your application:  
     ```java
@@ -167,14 +168,14 @@ Please read the instructions for each exercise carefully.
 1. Edit `Main.java` to fix the invocation of `new Dog()` (i.e. add the `age` parameter when creating `Dog` objects)
 1. Add and commit your changes to your local repository.
 1. Push your changes to your remote repository.
-1. Merge `dogs` into `main`.
-1. Resolve the conflicts git will identify.
-1. Make a merge commit and push it to remote repository.
+1. Merge `owners` into `main`.
+1. Resolve the conflicts git will identify. In the resulting code, your `Dog` class must have the age attribute (including in its constructor) and the `Owner` object must be created and printed on the `main()`.
+1. Create a merge commit.
+1. Push the merge to your remote repository.
 
 ## Exercise 6
 
-1. Checkout the `main` branch.
-1. Add a `Cat.java` file:
+1. On the `main` branch, add a `Cat.java` file:
     ```java
     public class Cat {
       String name;
@@ -192,17 +193,20 @@ Please read the instructions for each exercise carefully.
     }
     ```
 1. Add and commit this change to your local repository.
-1. Reverse this last commit in a way that it is removed from your repository's history
+1. Reverse this last commit in a way that it is removed from your repository's history.
     - Hint 1: Use the `git reset` command.
     - Hint 2: To see your repository's history, use the `git log` command.
 1. Commit `Cat.java` again.
-1. Reverse this last commit in a way that it remains in from your repository's history
-    - Hint: Use the `git reverse` command.
+1. Reverse this last commit in a way that it remains in from your repository's history.
+    - Hint: Use the `git revert` command.
+1. Push these changes to your remote repository.
 
 ## Exercise 7
 
 1. On your local repository, delete all branches besides `main`.
 1. On your remote repository, delete all branches besides `main`.
+1. Close your IDE.
+1. Delete the directory containing your local git repository.
 1. Download a Git client with a graphical user interface (e.g. Github Desktop, Git Kraken).
 1. Redo exercises 1 to 6 using the client you just downloaded.
 
