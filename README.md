@@ -1,107 +1,214 @@
-# :wave: The Basics of GitHub 
+# Regular Expressions
 
-## 🤓 Course overview and learning outcomes 
+These **ungraded** exercises were designed for you to practice working with Git and Github.
 
-The goal of this course is to give you a brief introduction to GitHub. We’ll also provide you with materials for further learning and a few ideas to get you started on our platform. 🚀
+Please read the instructions for each exercise carefully.
 
-## :octocat: Git and GitHub
+**Solve exercises 1 to 6 using Git's command line interface.**
 
-Git is a **distributed Version Control System (VCS)**, which means it is a useful tool for easily tracking changes to your code, collaborating, and sharing. With Git you can track the changes you make to your project so you always have a record of what you’ve worked on and can easily revert back to an older version if need be. It also makes working with others easier—groups of people can work together on the same project and merge their changes into one final source!
+## Exercise 1
 
-GitHub is a way to use the same power of Git all online with an easy-to-use interface. It’s used across the software world and beyond to collaborate and maintain the history of projects.
+1. Clone this repository into your computer.
+    * Hint: Look into the `git clone` command
+1. Open your IDE of choice and add a Java project to this repository as shown below:
+    ```
+    ├── src
+    │   ├── Dog.java
+    │   ├── Main.java
+    ```
+    ```java
+    public class Dog {
+      String name;
+      String breed;
+      double height;
+      double weight;
 
-GitHub is home to some of the most advanced technologies in the world. Whether you're visualizing data or building a new game, there's a whole community and set of tools on GitHub that can get you to the next step. This course starts with the basics of GitHub, but we'll dig into the rest later.
+      public Dog(String name, String breed, double height, double weight) {
+        this.name = name;
+        this.breed = breed;
+        this.height = height;
+        this.weight = weight;
+      }
 
-## :octocat: Understanding the GitHub flow 
+      @Override
+      public String toString() {
+        return "Hi, my name is " + name + "! " +
+                "I'm a " + height + " cm tall " + breed +
+                " that weighs " + weight + "kg.";
+      }
+    }
+    ```
+    ```java
+    public class Main {
+      public static void main(String[] args) {
+        Dog snuffles = new Dog("Snuffles", "Maltese", 20, 5.5);
+        System.out.println(snuffles);
 
-The GitHub flow is a lightweight workflow that allows you to experiment and collaborate on your projects easily, without the risk of losing your previous work.
+        Dog marley = new Dog("Marley", "Labrador", 55, 29);
+        System.out.println(marley);
+      }
+    }
+    ```
+1. Compile and run this code. 
+1. Commit these new files into your local git repository. Do not commit any compiled classes and IDE files!
+    - Hint: Look into the `git add` and `git commit` commands.
+1. Push your changes into your remote git repository. 
+    - Hint: Look into the `git push` command.
+ 
+## Exercise 3
 
-### Repositories
+1. Checkout the `main` branch.
+1. Create a branch named `new-dogs` from `main` in your local git repository.
+    - Hint: Look into the `git branch` command.
+1. Checkout the `new-dogs` branch.
+1. Edit `Main.java` and make it print 3 new dogs.
+1. Commit those changes into your local git.
+1. Publish the `new-dogs` branch on your remote git repository.
+    - Hint: Look into the `--set-upstream` option of the `git push` command.
+1. Open your https://github.com and verify that your branch has been published there.
+1. Merge `new-dogs` into `main`.
+    - Hint: Look into the `git merge` command.
+1. Delete `new-dogs` on your local repository.
+    - Hint: Look into the `--delete` option of the `git branch` command.
+1. Delete `new-dogs` on your remote repository.
+    - Hint: Look into the `--delete` option of the `git push` command.
 
-A repository is where your project work happens--think of it as your project folder. It contains all of your project’s files and revision history.  You can work within a repository alone or invite others to collaborate with you on those files.
+## Exercise 4
 
-### Cloning 
+1. Checkout the `main` branch.
+1. Create a `.gitignore` file that ignores:
+    * any `.class` file (e.g. `Dog.class`, `Main.class`)
+    * any file or directory your IDE may have created
+    * any OS-specific file (e.g. `.DS_Store` on macOS)
+1. Commit your changes.
+1. Push your changes to your remote repository.
 
-When a repository is created with GitHub, it’s stored remotely in the ☁️. You can clone a repository to create a local copy on your computer and then use Git to sync the two. This makes it easier to fix issues, add or remove files, and push larger commits. You can also use the editing tool of your choice as opposed to the GitHub UI. Cloning a repository also pulls down all the repository data that GitHub has at that point in time, including all versions of every file and folder for the project! This can be helpful if you experiment with your project and then realize you liked a previous version more. 
-To learn more about cloning, read ["Cloning a Repository"](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository). 
+## Exercise 5
 
-### Committing and pushing
-**Committing** and **pushing** are how you can add the changes you made on your local machine to the remote repository in GitHub. That way your instructor and/or teammates can see your latest work when you’re ready to share it. You can make a commit when you have made changes to your project that you want to “checkpoint.” You can also add a helpful **commit message** to remind yourself or your teammates what work you did (e.g. “Added a README with information about our project”).
+1. Checkout the `main` branch.
+1. Create a branch named `owners`.
+1. Checkout the `owners` branch.
+1. Add `Owner.java` to your application:  
+    ```java
+    import java.util.ArrayList;
+    import java.util.List;
 
-Once you have a commit or multiple commits that you’re ready to add to your repository, you can use the push command to add those changes to your remote repository. Committing and pushing may feel new at first, but we promise you’ll get used to it 🙂
+    public class Owner {
+      String name;
+      List<Dog> dogs;
 
-## 💻 GitHub terms to know 
+      public Owner(String name) {
+        this.name = name;
+        dogs = new ArrayList<>();
+      }
 
-### Repositories 
-We mentioned repositories already, they are where your project work happens, but let’s talk a bit more about the details of them! As you work more on GitHub you will have many repositories which may feel confusing at first. Fortunately, your ["GitHub dashboard"](https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/about-your-personal-dashboard) helps to easily navigate to your repositories and see useful information about them. Make sure you’re logged in to see it!
+      @Override
+      public String toString() {
+        List<String> dogNames = new ArrayList<>();
 
-Repositories also contain **README**s. You can add a README file to your repository to tell other people why your project is useful, what they can do with your project, and how they can use it. We are using this README to communicate how to learn Git and GitHub with you. 😄 
-To learn more about repositories read ["Creating, Cloning, and Archiving Repositories](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-repositories) and ["About README's"](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/about-readmes). 
+        for (Dog dog : dogs)
+          dogNames.add(dog.name);
 
-### Branches
-You can use branches on GitHub to isolate work that you do not want merged into your final project just yet. Branches allow you to develop features, fix bugs, or safely experiment with new ideas in a contained area of your repository. Typically, you might create a new branch from the default branch of your repository—main. This makes a new working copy of your repository for you to experiment with. Once your new changes have been reviewed by a teammate, or you are satisfied with them, you can merge your changes into the default branch of your repository.
-To learn more about branching, read ["About Branches"](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-branches).
+        String dogList = "[" + String.join(", ", dogNames) + "]";
 
-### Forks
-A fork is another way to copy a repository, but is usually used when you want to contribute to someone else’s project. Forking a repository allows you to freely experiment with changes without affecting the original project and is very popular when contributing to open source software projects!
-To learn more about forking, read ["Fork a repo"](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo)
+        return "Hi, I'm " + name + "! I own these dogs: " + dogList;
+      }
+    }
+    ```
+1. Modify `Main.java` as shown below:
+    ```java
+    public class Main {
+      public static void main(String[] args) {
+        Owner morty = new Owner("Morty");
 
-### Pull requests
-When working with branches, you can use a pull request to tell others about the changes you want to make and ask for their feedback. Once a pull request is opened, you can discuss and review the potential changes with collaborators and add more changes if need be. You can add specific people as reviewers of your pull request which shows you want their feedback on your changes! Once a pull request is ready-to-go, it can be merged into your main branch.
-To learn more about pull requests, read ["About Pull Requests"](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests). 
+        Dog snuffles = new Dog("Snuffles", "Maltese", 20, 5.5);
+        morty.dogs.add(snuffles);
+        System.out.println(snuffles);
 
+        Dog marley = new Dog("Marley", "Labrador", 55, 29);
+        morty.dogs.add(marley);
+        System.out.println(marley);
 
-### Issues
-Issues are a way to track enhancements, tasks, or bugs for your work on GitHub. Issues are a great way to keep track of all the tasks you want to work on for your project and let others know what you plan to work on. You can also use issues to tell a favorite open source project about a bug you found or a feature you think would be great to add!
+        System.out.println(morty);
+      }
+    }
+    ```
+1. Commit your changes to your local repository.
+1. Push your changes to your remote repository.
+1. Checkout the `main` branch.
+1. Edit `Dog.java` as shown below:
+    ```java
+    public class Dog {
+      String name;
+      String breed;
+      double height;
+      double weight;
+      int age;
 
-For larger projects, you can keep track of many issues on a project board. GitHub Projects help you organize and prioritize your work and you can read more about them [in this "About Project boards document](https://docs.github.com/en/github/managing-your-work-on-github/about-project-boards). You likely won’t need a project board for your assignments, but once you move on to even bigger projects, they’re a great way to organize your team’s work!
-You can also link together pull requests and issues to show that a fix is in progress and to automatically close the issue when someone merges the pull request.
-To learn more about issues and linking them to your pull requests, read ["About Issues"](https://docs.github.com/en/github/managing-your-work-on-github/about-issues). 
+      public Dog(String name, String breed, double height, double weight, int age) {
+        this.name = name;
+        this.breed = breed;
+        this.height = height;
+        this.weight = weight;
+        this.age = age;
+      }
 
-### Your user profile
+      @Override
+      public String toString() {
+        return "Hi, my name is " + name + "! " +
+                "I'm a " + height + " cm tall " + breed +
+                " that weighs " + weight + "kg. " +
+                "I'm " + age + " years old.";
+      }
+    }
+    ```
+1. Edit `Main.java` to fix the invocation of `new Dog()` (i.e. add the `age` parameter when creating `Dog` objects)
+1. Add and commit your changes to your local repository.
+1. Push your changes to your remote repository.
+1. Merge `dogs` into `main`.
+1. Resolve the conflicts git will identify.
+1. Make a merge commit and push it to remote repository.
 
-Your profile page tells people the story of your work through the repositories you're interested in, the contributions you've made, and the conversations you've had. You can also give the world a unique view into who you are with your profile README. You can use your profile to let future employers know all about you! 
-To learn more about your user profile and adding and updating your profile README, read ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme). 
+## Exercise 6
 
-### Using markdown on GitHub 
+1. Checkout the `main` branch.
+1. Add a `Cat.java` file:
+    ```java
+    public class Cat {
+      String name;
+      String favoriteFood;
 
-You might have noticed already, but you can add some fun styling to your issues, pull requests, and files. ["Markdown"](https://guides.github.com/features/mastering-markdown/) is an easy way to style your issues, pull requests, and files with some simple syntax. This can be helpful to organize your information and make it easier for others to read. You can also drop in gifs and images to help convey your point!
-To learn more about using GitHub’s flavor of markdown, read ["Basic Writing and Formatting Syntax"](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax). 
+      public Cat(String name, String favoriteFood) {
+        this.name = name;
+        this.favoriteFood = favoriteFood;
+      }
 
-### Engaging with the GitHub community
+      @Override
+      public String toString() {
+        return name + ": I'm a cat and I love to eat " + favoriteFood;
+      }
+    }
+    ```
+1. Add and commit this change to your local repository.
+1. Reverse this last commit in a way that it is removed from your repository's history
+    - Hint 1: Look into the `git reset` command.
+    - Hint 2: To see your repository's history, use the `git log` command.
+1. Commit `Cat.java` again.
+1. Reverse this last commit in a way that it remains in from your repository's history
+    - Hint: Look into the `git reverse` command.
 
-The GitHub community is vast. There are many types of people who use GitHub in their day to day—students like you, professional developers, hobbyists working on open source projects, and explorers who are just jumping into the world of software development on their own. There are many ways you can interact with the larger GitHub community, but here are three places where you can start. 
+## Exercise 7
 
-#### Starring repositories 
+1. On your local repository, delete all branches besides `main`.
+1. On your remote repository, delete all branches besides `main`.
+1. Download a Git client with a graphical user interface (e.g. Github Desktop, Git Kraken).
+1. Redo exercises 1 to 6 using the client you just downloaded.
 
-If you find a repository interesting or you want to keep track of it, star it! When you star a repository it’s also used as a signal to surface better recommendations on github.com/explore. If you’d like to get back to your starred repositories you can do so via your user profile. 
-To learn  more about starring repositories, read ["Saving Repositories with Stars"](https://docs.github.com/en/github/getting-started-with-github/saving-repositories-with-stars). 
+## Resources 
 
-#### Following users 
-
-You can follow people on GitHub to receive notifications about their activity and discover projects in their communities. When you follow a user, their public GitHub activity will show up on your dashboard so you can see all the cool things they are working on. 
-To learn more about following users, read ["Following People"](https://docs.github.com/en/github/getting-started-with-github/following-people).
-
-#### Browsing GitHub Explore 
-
-GitHub Explore is a great place to do just that … explore :smile: You can find new projects, events, and developers to interact with.
-
-You can check out the GitHub Explore website [at github.com/explore](https://github.com/explore). The more you intereact with GitHub the more tailored your Explore view will be. 
-
-## 📝 Optional next steps 
-
-* Open a pull request and let your teacher know that you’ve finished this course.  
-* Create a new markdown file in this repository. Let them know what you learned and what you are still confused about! Experiment with different styles!
-* Create your profile README. Let the world know a little bit more about you! What are you interested in learning? What are you working on? What's your favorite hobby? Learn more about creating your profile README in the document, ["Managing Your Profile README"](https://docs.github.com/en/github/setting-up-and-managing-your-github-profile/managing-your-profile-readme).
-* Go to your user dashboard and create a new repository. Experiment with the features within that repository to familiarize yourself with them. 
-* [Let us know what you liked or didn’t like about the content of this course](https://support.github.com/contact/education). What would you like to see more of? What would be interesting or helpful to your learning journey? 
-
-## 📚  Resources 
 * [A short video explaining what GitHub is](https://www.youtube.com/watch?v=w3jLJU7DT5E&feature=youtu.be) 
 * [Git and GitHub learning resources](https://docs.github.com/en/github/getting-started-with-github/git-and-github-learning-resources) 
 * [Understanding the GitHub flow](https://guides.github.com/introduction/flow/)
 * [How to use GitHub branches](https://www.youtube.com/watch?v=H5GJfcp3p4Q&feature=youtu.be)
 * [Interactive Git training materials](https://githubtraining.github.io/training-manual/#/01_getting_ready_for_class)
 * [GitHub's Learning Lab](https://lab.github.com/)
-* [Education community forum](https://education.github.community/)
-* [GitHub community forum](https://github.community/)
