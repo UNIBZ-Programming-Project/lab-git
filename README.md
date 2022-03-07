@@ -6,6 +6,8 @@ Please read the instructions for each exercise carefully.
 
 **Solve exercises 1 to 6 using Git's command line interface.**
 
+If you get tired of adding your credentials everytime you push changes to Github, consider [caching your GitHub credentials in Git](https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git).
+
 ## Exercise 1
 
 1. Clone this repository into your computer.
