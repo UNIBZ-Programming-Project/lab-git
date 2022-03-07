@@ -49,7 +49,7 @@ Please read the instructions for each exercise carefully.
       }
     }
     ```
-1. Compile and run this code. 
+1. Using your IDE, compile and run this code.
 1. Commit these new files into your local git repository. Do not commit any compiled classes and IDE files!
     - Hint: Look into the `git add` and `git commit` commands.
 1. Push your changes into your remote git repository. 
