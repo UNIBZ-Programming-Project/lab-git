@@ -1,4 +1,4 @@
-# Regular Expressions
+# Git
 
 These exercises were designed for you to practice working with Git and Github.
 
